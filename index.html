@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pong Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        #gameContainer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            font-size: 2.5em;
+        }
+
+        canvas {
+            background: #000;
+            border: 3px solid #0f3460;
+            box-shadow: 0 0 20px rgba(15, 52, 96, 0.8);
+            display: block;
+            margin: 0 auto;
+            cursor: none;
+        }
+
+        #scoreBoard {
+            color: #00ff41;
+            font-size: 28px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            letter-spacing: 2px;
+        }
+
+        #gameOverMessage {
+            display: none;
+            color: #ff6b6b;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        #resetButton {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 16px;
+            background-color: #0f3460;
+            color: #00ff41;
+            border: 2px solid #00ff41;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #resetButton:hover {
+            background-color: #00ff41;
+            color: #0f3460;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+        }
+
+        #instructions {
+            color: #aaa;
+            margin-top: 25px;
+            font-size: 14px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #instructions p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .instruction-title {
+            color: #00ff41;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>⚡ AI PONG GAME ⚡</h1>
+        <canvas id="pongCanvas" width="800" height="400"></canvas>
+        <div id="scoreBoard">Player: 0 | Computer: 0</div>
+        <div id="gameOverMessage"></div>
+        <button id="resetButton">RESET GAME</button>
+        <div id="instructions">
+            <p class="instruction-title">🎮 Controls:</p>
+            <p><strong>Left Paddle (Player):</strong> Move your mouse or use Arrow Up/Down</p>
+            <p><strong>Right Paddle (Computer):</strong> AI controlled</p>
+            <p class="instruction-title">📊 Game Rules:</p>
+            <p>First to 11 points wins the game!</p>
+            <p>Click RESET GAME to start over</p>
+        </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>

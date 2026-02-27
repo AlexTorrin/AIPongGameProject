@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ApiError } from '@pong/shared';
+import { ApiError } from '@pong/shared/dist/types/api';
 
 /**
  * Error handling middleware

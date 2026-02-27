@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { GameSessionData, GameResult } from '../types/index';
 
 /**
@@ -11,7 +11,7 @@ export class GameSessionService {
   private results: GameResult[] = [];
 
   createSession(playerId: string, difficulty: 'easy' | 'medium' | 'hard' = 'medium'): string {
-    const sessionId = uuid();
+    const sessionId = uuidv4();
     const session: GameSessionData = {
       id: sessionId,
       playerId,
